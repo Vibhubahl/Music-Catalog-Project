@@ -206,15 +206,14 @@ def deletemusic(musictype_id, music_id):
 @app.route('/musictype/<int:musictype_id>/music/JSON')
 def TypemusicJSON(musictype_id):
     type = session.query(MusicType).filter_by(id=musictype_id).all()
-    mov = session.query(MusicName).filter_by(
-            id=musictype_id).all()
+    mov = session.query(MusicName).filter_by(musicname_id=musictype_id).all()
     return jsonify(musicitem=[i.serialize for i in mov])
 
 
 @app.route('/musictype/<int:musictype_id>/<int:music_id>/JSON')
 def musicJSON(musictype_id, music_id):
     music = session.query(MusicName).filter_by(id=music_id).all()
-    return jsonify(Menu_Item=[r.serialize for r in music])
+    return jsonify(Music_Item=[r.serialize for r in music])
 
 
 @app.route('/music/JSON')
