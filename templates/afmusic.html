@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+{% block content %}
+<a href="{{url_for('gdisconnect')}}"><button style="height: 50px; background-color: transparent; border-color: transparent; font-size: 30px; font-family:juice itc; color:white;">Logout</button></a>
+	<div class="row banner main">
+			<center><div id="head1"><br>MUSIC CATALOG</div></center>
+	</div>
+
+		<br>
+		<font style="font-size: 100px; color: #E8F5E9; font-weight: 950; font-family: juice itc;">CATEGORY</font>
+		<br><br>
+		<a href="{{url_for('newmusic')}}"><button id="b1">ADD MUSIC</button></a><br>
+	{% for i in music%}
+		<div id="item"><a href = "{{url_for('shownewMusic_type', musictype_id = i.id)}}">{{i.name}}</a>
+			<a href="{{url_for('edittype',musictype_id=i.id)}}"><button id="but">EDIT</button></a>
+			<a href="{{url_for('deletetype',musictype_id=i.id)}}"><button id="but">DELETE</button></a>
+		</div>
+		<br>
+	{% endfor %}
+{% endblock %}

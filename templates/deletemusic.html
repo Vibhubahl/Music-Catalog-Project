@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+{% block content %}
+			<div class="row banner main">
+			<center><div id="head1"><br>DELETE MUSIC</div></center>
+	</div>
+	<center>
+<form action="#" method = 'post'>
+	<font style="font-family: juice itc; font-size: 40px; color: #fff;">Are you sure you want to delete music : {{music.name}}</font>
+	<br><br>
+	<button id="b1" type="submit">Delete</button>
+	&nbsp;&nbsp;&nbsp;<a href = "{{url_for('shownewMusic_type',musictype_id = type.id)}}">
+		<input type="button" id="b1" value="Cancel"></input>
+	</a>
+</form>
+</center>
+{% endblock %}

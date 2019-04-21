@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+{% block content %}
+	<a href="{{url_for('showLogin')}}"><button style="height: 50px; background-color: transparent; border-color: transparent; font-size: 30px; font-family:juice itc; color:white;">Click here to Login</button></a>
+	<div class="row banner main">
+			<center><div id="head1">MUSIC CATALOG</div></center>
+	</div>
+		<br>
+		<font style="font-size: 100px; color: #E8F5E9; font-weight: 950; font-family: juice itc;">CATEGORY</font>
+		<br><br>
+	{% for i in Music%}
+		<div id="item"><a href = "{{url_for('showMusic_type', musictype_id = i.id)}}">{{i.name}}</a></div>
+		<br>
+	{% endfor %}
+{% endblock %}

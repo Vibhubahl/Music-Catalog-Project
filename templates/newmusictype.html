@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+{% block content %}
+	<div class="row banner main">
+			<center><div id="head2"><br><br>{{tmusictype.name}}</div></center>
+	</div>
+		<br><br>
+		<button><a href="{{url_for('addnewMusic',musictype_id=tmusictype.id)}}"><button id="b1">ADD MUSIC</button></a><br>
+		<br><br>
+		{% for j in musicitem %}
+		<div id="conta">
+			<div id="text">
+				<p><font style="font-size:40px;">&nbsp;{{j.name}}</font></p>
+				<p><font style="font-size: 35px;">&nbsp;Artist: &nbsp; &nbsp;</font><font style="font-size: 28px;">{{j.artist}}</font></p>
+				<p><font style="font-size: 35px;">&nbsp;Release Year: &nbsp; &nbsp;</font><font style="font-size: 28px;">{{j.releaseyear}}</font></p>
+				<a href="{{url_for('editMusic',musictype_id=tmusictype.id, music_id=j.id)}}"><button id="but1">EDIT</button></a>
+			<a href="{{url_for('deletemusic',musictype_id=tmusictype.id, music_id=j.id)}}"><button id="but1">DELETE</button></a>
+				<br><br><br><br>
+			</div>
+		</div>
+		{% endfor %}
+{% endblock %}

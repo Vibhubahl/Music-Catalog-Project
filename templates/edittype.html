@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+{% block content %}
+			<div class="row banner main">
+			<center><div id="head1"><br>EDIT MUSIC LANGUAGE</div></center>
+	</div>
+	<center>
+<form action="#" method = 'post'>
+	<font face="juice itc" style="font-size: 40px; color: #fff;">Current Music Type : {{type.name}}</font>
+	<br><br>
+	<input style="width: 380px; height: 40px; border-radius: 5px; color: #000; font-size: 30px;" type ="text" maxlength="100" name="name" required="text">
+	<br><br>
+	<button id="b1" type="submit">Change</button>
+	&nbsp;&nbsp;&nbsp;<a href = "{{url_for('shownewMusic')}}">
+		<input type="button" id="b1" value="Cancel"></input>
+	</a>
+</form>
+</center>
+{% endblock %}

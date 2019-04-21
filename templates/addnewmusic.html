@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+{% block content %}
+			<div class="row banner main">
+			<center><div id="head1"><br>ADD MUSIC IN {{tmusictype.name}}</div></center>
+	</div>
+	<center>
+<form action="#" method = 'post'>
+	<br><br>
+	<input style="width: 730px; height: 40px; border-radius: 5px; color: #000; font-size: 30px;" type ="text" maxlength="100" name="name" placeholder="Music Name" required="text">
+	<br><br>
+	<input required="text" style="width: 730px; height: 40px; border-radius: 5px; color: #000; font-size: 30px;" type ="text" maxlength="100" name="releaseyear" placeholder="releaseyear">
+	<br><br>
+	<input required="text" style="width: 730px; height: 40px; border-radius: 5px; color: #000; font-size: 30px;" type ="text" maxlength="100" name="artist" placeholder="artist">
+	<br><br>
+	<button id="b2" type="submit">ADD</button>
+	&nbsp;&nbsp;&nbsp;<a href = "{{url_for('shownewMusic_type',musictype_id=tmusictype.id)}}">
+		<input type="button" id="b2" value="Cancel"></input>
+	</a>
+</form>
+</center>
+{% endblock %}

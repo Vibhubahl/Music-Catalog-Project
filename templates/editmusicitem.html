@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+{% block content %}
+			<div class="row banner main">
+			<center><div id="head1"><br>EDIT MOVIE {{editMusic.name}}</div></center>
+	</div>
+	<center>
+<form action="#" method = 'post'>
+	<br><br>
+	<input required="text" type="text" style="width: 730px; height: 40px; border-radius: 5px; color: #000; font-size: 30px;" type ="text" maxlength="100" name="name" value="{{editMusic.name}}">
+	<br><br>
+	<input required="text" type="text" style="width: 730px; height: 40px; border-radius: 5px; color: #000; font-size: 30px;" type ="text" maxlength="100" name="releaseyear" value="{{editMusic.releaseyear}}">
+	<br><br>
+	<input required="text" type="text" style="width: 730px; height: 40px; border-radius: 5px; color: #000; font-size: 30px;" type ="text" maxlength="100" name="artist" value="{{editMusic.artist}}">
+	<br><br>
+	<button id="b2" type="submit">Edit</button>
+	&nbsp;&nbsp;&nbsp;<a href = "{{url_for('shownewMusic_type',musictype_id=type.id)}}">
+		<input type="button" id="b2" value="Cancel"></input>
+	</a>
+</form>
+</center>
+{% endblock %}
